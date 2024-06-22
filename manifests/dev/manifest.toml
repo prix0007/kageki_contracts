@@ -22,8 +22,8 @@ name = "dojo::base::base"
 [[contracts]]
 kind = "DojoContract"
 address = "0x194fb2b94cdf270b0e0b6cecc3886128a12f4a497cbd4963ff7aecbc0e7a6e7"
-class_hash = "0x178d9e0c99588bdd49ff918f2aab15df8b411522df0beb8f283e8aa3b891bef"
-original_class_hash = "0x178d9e0c99588bdd49ff918f2aab15df8b411522df0beb8f283e8aa3b891bef"
+class_hash = "0x5e7ed22bae62ad889675fdb2b7f1927d294b3534f3c9a4f48eebdb1cbca14d2"
+original_class_hash = "0x5e7ed22bae62ad889675fdb2b7f1927d294b3534f3c9a4f48eebdb1cbca14d2"
 base_class_hash = "0x22f3e55b61d86c2ac5239fa3b3b8761f26b9a5c0b5f61ddbd5d756ced498b46"
 abi = "manifests/dev/abis/deployments/contracts/kageki_duels_systems_player_actions_actions.json"
 reads = []

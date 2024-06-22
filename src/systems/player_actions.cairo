@@ -56,13 +56,9 @@ mod actions {
             // ID assignment. Create and then Increment
             let card: Card = create_card_from_randomness(player, last_id, randomness);
 
-            let new_player: Player = Player {
-                player: player, battles: 0, wins: 0, loses: 0, party_count: 0
-            };
-
             cards_count.total += 1;
 
-            set!(world, (new_player, card, cards_count));
+            set!(world, (card, cards_count));
             // Emit event of player card created
             emit!(world, (PlayerCardCreated { player: player, cardId: last_id }));
         }
