@@ -10,6 +10,7 @@ trait IActions {
     fn spawn_player(ref world: IWorldDispatcher);
     fn make_party(ref world: IWorldDispatcher, id1: u128, id2: u128, id3: u128, id4: u128);
     fn create_character(ref world: IWorldDispatcher, player: ContractAddress, randomness: felt252);
+    fn make_party_toggle(ref world: IWorldDispatcher, partyId: u64);
 }
 
 // dojo decorator
@@ -64,6 +65,17 @@ mod actions {
             set!(world, (new_player, card, cards_count));
             // Emit event of player card created
             emit!(world, (PlayerCardCreated { player: player, cardId: last_id }));
+        }
+
+        fn make_party_toggle(ref world: IWorldDispatcher, partyId: u64) {
+            let caller = get_caller_address();
+
+            // Retrieve the player's current state of party.
+            let mut player_party: PlayerParty = get!(world, (caller, partyId), PlayerParty);
+
+            player_party.is_active = !player_party.is_active;
+
+            set!(world, (player_party));
         }
 
 

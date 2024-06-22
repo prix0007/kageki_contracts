@@ -108,6 +108,18 @@
         ],
         "outputs": [],
         "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "make_party_toggle",
+        "inputs": [
+          {
+            "name": "partyId",
+            "type": "core::integer::u64"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
       }
     ]
   },

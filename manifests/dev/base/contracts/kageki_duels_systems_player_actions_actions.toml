@@ -1,6 +1,6 @@
 kind = "DojoContract"
-class_hash = "0x6bde0a551ffa5621fc665c89d9d40e9280164d5e048b8ae1afb67595fffd7a0"
-original_class_hash = "0x6bde0a551ffa5621fc665c89d9d40e9280164d5e048b8ae1afb67595fffd7a0"
+class_hash = "0x178d9e0c99588bdd49ff918f2aab15df8b411522df0beb8f283e8aa3b891bef"
+original_class_hash = "0x178d9e0c99588bdd49ff918f2aab15df8b411522df0beb8f283e8aa3b891bef"
 base_class_hash = "0x0"
 abi = "manifests/dev/abis/base/contracts/kageki_duels_systems_player_actions_actions.json"
 reads = []
