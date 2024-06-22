@@ -1,10 +1,12 @@
 mod systems {
-    mod actions;
+    mod player_actions;
+    mod stage_actions;
 }
 
 mod models {
-    mod moves;
-    mod position;
+    mod card;
+    mod player;
+    mod environment;
 }
 
 mod tests {

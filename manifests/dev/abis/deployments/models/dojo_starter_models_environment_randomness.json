@@ -319,52 +319,26 @@
   },
   {
     "type": "impl",
-    "name": "movedImpl",
-    "interface_name": "dojo_starter::systems::actions::actions::Imoved"
-  },
-  {
-    "type": "enum",
-    "name": "dojo_starter::models::moves::Direction",
-    "variants": [
-      {
-        "name": "None",
-        "type": "()"
-      },
-      {
-        "name": "Left",
-        "type": "()"
-      },
-      {
-        "name": "Right",
-        "type": "()"
-      },
-      {
-        "name": "Up",
-        "type": "()"
-      },
-      {
-        "name": "Down",
-        "type": "()"
-      }
-    ]
+    "name": "randomnessImpl",
+    "interface_name": "dojo_starter::models::environment::Irandomness"
   },
   {
     "type": "struct",
-    "name": "dojo_starter::systems::actions::actions::Moved",
+    "name": "dojo_starter::models::environment::Randomness",
     "members": [
       {
-        "name": "player",
+        "name": "contract",
         "type": "core::starknet::contract_address::ContractAddress"
       },
       {
-        "name": "direction",
-        "type": "dojo_starter::models::moves::Direction"
+        "name": "last_random_id",
+        "type": "core::felt252"
       }
     ]
   },
   {
     "type": "interface",
-    "name": "dojo_starter::systems::actions::actions::Imoved",
+    "name": "dojo_starter::models::environment::Irandomness",
     "items": [
       {
         "type": "function",
@@ -372,7 +346,7 @@
         "inputs": [
           {
             "name": "model",
-            "type": "dojo_starter::systems::actions::actions::Moved"
+            "type": "dojo_starter::models::environment::Randomness"
           }
         ],
         "outputs": [],
@@ -382,7 +356,7 @@
   },
   {
     "type": "event",
-    "name": "dojo_starter::systems::actions::actions::moved::Event",
+    "name": "dojo_starter::models::environment::randomness::Event",
     "kind": "enum",
     "variants": []
   }

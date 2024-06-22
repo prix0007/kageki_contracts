@@ -1,0 +1,10 @@
+kind = "DojoContract"
+class_hash = "0x6bde0a551ffa5621fc665c89d9d40e9280164d5e048b8ae1afb67595fffd7a0"
+original_class_hash = "0x6bde0a551ffa5621fc665c89d9d40e9280164d5e048b8ae1afb67595fffd7a0"
+base_class_hash = "0x0"
+abi = "manifests/dev/abis/base/contracts/kageki_duels_systems_player_actions_actions.json"
+reads = []
+writes = []
+computed = []
+init_calldata = []
+name = "kageki_duels::systems::player_actions::actions"

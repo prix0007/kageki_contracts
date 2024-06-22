@@ -1,0 +1,25 @@
+kind = "DojoModel"
+class_hash = "0x4044c217f6c2ce69053167da4221724b51dbca8e89e473036b0480fea4fe257"
+original_class_hash = "0x4044c217f6c2ce69053167da4221724b51dbca8e89e473036b0480fea4fe257"
+abi = "manifests/dev/abis/base/models/kageki_duels_systems_stage_actions_actions_battle_result.json"
+name = "kageki_duels::systems::stage_actions::actions::battle_result"
+
+[[members]]
+name = "winner"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "loser"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "party_id1"
+type = "u64"
+key = false
+
+[[members]]
+name = "party_id2"
+type = "u64"
+key = false

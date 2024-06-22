@@ -1,0 +1,15 @@
+kind = "DojoModel"
+class_hash = "0x7a8835203f7a624eddaf422a0330b0d270b4efac8ed4257bbbca2350ba3e871"
+original_class_hash = "0x7a8835203f7a624eddaf422a0330b0d270b4efac8ed4257bbbca2350ba3e871"
+abi = "manifests/dev/abis/base/models/kageki_duels_models_card_card_count.json"
+name = "kageki_duels::models::card::card_count"
+
+[[members]]
+name = "owner"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "total"
+type = "u128"
+key = false

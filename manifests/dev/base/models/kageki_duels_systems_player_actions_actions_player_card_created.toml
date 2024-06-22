@@ -1,0 +1,15 @@
+kind = "DojoModel"
+class_hash = "0x13b8a58a43d5259f5cfa06575eefe38cc1d30c6cf06e4f8bc3a6eef59793524"
+original_class_hash = "0x13b8a58a43d5259f5cfa06575eefe38cc1d30c6cf06e4f8bc3a6eef59793524"
+abi = "manifests/dev/abis/base/models/kageki_duels_systems_player_actions_actions_player_card_created.json"
+name = "kageki_duels::systems::player_actions::actions::player_card_created"
+
+[[members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "cardId"
+type = "u128"
+key = false

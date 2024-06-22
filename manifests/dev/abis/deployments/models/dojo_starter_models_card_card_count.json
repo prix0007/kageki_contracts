@@ -319,40 +319,26 @@
   },
   {
     "type": "impl",
-    "name": "positionImpl",
-    "interface_name": "dojo_starter::models::position::Iposition"
+    "name": "card_countImpl",
+    "interface_name": "dojo_starter::models::card::Icard_count"
   },
   {
     "type": "struct",
-    "name": "dojo_starter::models::position::Vec2",
+    "name": "dojo_starter::models::card::CardCount",
     "members": [
       {
-        "name": "x",
-        "type": "core::integer::u32"
-      },
-      {
-        "name": "y",
-        "type": "core::integer::u32"
-      }
-    ]
-  },
-  {
-    "type": "struct",
-    "name": "dojo_starter::models::position::Position",
-    "members": [
-      {
-        "name": "player",
+        "name": "owner",
         "type": "core::starknet::contract_address::ContractAddress"
       },
       {
-        "name": "vec",
-        "type": "dojo_starter::models::position::Vec2"
+        "name": "total",
+        "type": "core::integer::u128"
       }
     ]
   },
   {
     "type": "interface",
-    "name": "dojo_starter::models::position::Iposition",
+    "name": "dojo_starter::models::card::Icard_count",
     "items": [
       {
         "type": "function",
@@ -360,7 +346,7 @@
         "inputs": [
           {
             "name": "model",
-            "type": "dojo_starter::models::position::Position"
+            "type": "dojo_starter::models::card::CardCount"
           }
         ],
         "outputs": [],
@@ -370,7 +356,7 @@
   },
   {
     "type": "event",
-    "name": "dojo_starter::models::position::position::Event",
+    "name": "dojo_starter::models::card::card_count::Event",
     "kind": "enum",
     "variants": []
   }

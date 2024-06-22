@@ -1,0 +1,50 @@
+kind = "DojoModel"
+class_hash = "0x5705fba54be668852ca5e559a1eee914808a22eabe141c2430c31e95e4965a2"
+original_class_hash = "0x5705fba54be668852ca5e559a1eee914808a22eabe141c2430c31e95e4965a2"
+abi = "manifests/dev/abis/base/models/kageki_duels_models_card_card.json"
+name = "kageki_duels::models::card::card"
+
+[[members]]
+name = "owner"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "cardId"
+type = "u128"
+key = true
+
+[[members]]
+name = "power"
+type = "u32"
+key = false
+
+[[members]]
+name = "health"
+type = "u32"
+key = false
+
+[[members]]
+name = "factor"
+type = "u8"
+key = false
+
+[[members]]
+name = "experience"
+type = "u64"
+key = false
+
+[[members]]
+name = "battles"
+type = "u64"
+key = false
+
+[[members]]
+name = "skill"
+type = "Skill"
+key = false
+
+[[members]]
+name = "element"
+type = "Element"
+key = false

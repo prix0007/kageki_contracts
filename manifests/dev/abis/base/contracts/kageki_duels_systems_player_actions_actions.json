@@ -56,52 +56,54 @@
   {
     "type": "impl",
     "name": "ActionsImpl",
-    "interface_name": "dojo_starter::systems::actions::IActions"
-  },
-  {
-    "type": "enum",
-    "name": "dojo_starter::models::moves::Direction",
-    "variants": [
-      {
-        "name": "None",
-        "type": "()"
-      },
-      {
-        "name": "Left",
-        "type": "()"
-      },
-      {
-        "name": "Right",
-        "type": "()"
-      },
-      {
-        "name": "Up",
-        "type": "()"
-      },
-      {
-        "name": "Down",
-        "type": "()"
-      }
-    ]
+    "interface_name": "kageki_duels::systems::player_actions::IActions"
   },
   {
     "type": "interface",
-    "name": "dojo_starter::systems::actions::IActions",
+    "name": "kageki_duels::systems::player_actions::IActions",
     "items": [
       {
         "type": "function",
-        "name": "spawn",
+        "name": "spawn_player",
         "inputs": [],
         "outputs": [],
         "state_mutability": "external"
       },
       {
         "type": "function",
-        "name": "move",
+        "name": "make_party",
         "inputs": [
           {
-            "name": "direction",
-            "type": "dojo_starter::models::moves::Direction"
+            "name": "id1",
+            "type": "core::integer::u128"
+          },
+          {
+            "name": "id2",
+            "type": "core::integer::u128"
+          },
+          {
+            "name": "id3",
+            "type": "core::integer::u128"
+          },
+          {
+            "name": "id4",
+            "type": "core::integer::u128"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "create_character",
+        "inputs": [
+          {
+            "name": "player",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "randomness",
+            "type": "core::felt252"
           }
         ],
         "outputs": [],
@@ -112,11 +114,11 @@
   {
     "type": "impl",
     "name": "IDojoInitImpl",
-    "interface_name": "dojo_starter::systems::actions::actions::IDojoInit"
+    "interface_name": "kageki_duels::systems::player_actions::actions::IDojoInit"
   },
   {
     "type": "interface",
-    "name": "dojo_starter::systems::actions::actions::IDojoInit",
+    "name": "kageki_duels::systems::player_actions::actions::IDojoInit",
     "items": [
       {
         "type": "function",
@@ -176,7 +178,7 @@
   },
   {
     "type": "event",
-    "name": "dojo_starter::systems::actions::actions::Event",
+    "name": "kageki_duels::systems::player_actions::actions::Event",
     "kind": "enum",
     "variants": [
       {

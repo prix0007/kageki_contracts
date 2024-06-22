@@ -3,10 +3,10 @@ kind = "WorldContract"
 class_hash = "0x3f63cecdc4964acafb921ba2934c6507d1b3c344edb64c2762cf08053169ab9"
 original_class_hash = "0x3f63cecdc4964acafb921ba2934c6507d1b3c344edb64c2762cf08053169ab9"
 abi = "manifests/dev/abis/deployments/dojo_world_world.json"
-address = "0xb4079627ebab1cd3cf9fd075dda1ad2454a7a448bf659591f259efa2519b18"
-transaction_hash = "0x3a729aa09b4ad351fbc724f94c6d599037a53d7d9b5a182097a60fb09d0486c"
-block_number = 9
-seed = "dojo_starter"
+address = "0x21fc8b30c72425f7dcdc97f39e8db73a27e131018ae3f031c3394101354ea8c"
+transaction_hash = "0x40264e8603174b1f1abad8c9476d45d8bb63c6703282a92cff794b1879a81da"
+block_number = 49
+seed = "kageki_duels"
 name = "dojo::world::world"
 
 [world.metadata]
@@ -21,88 +21,186 @@ name = "dojo::base::base"
 
 [[contracts]]
 kind = "DojoContract"
-address = "0x3610b797baec740e2fa25ae90b4a57d92b04f48a1fdbae1ae203eaf9723c1a0"
-class_hash = "0x6b9e8abff1a178c80f9c18a29a35436d48759a1bcada1f074b1821df0f87119"
-original_class_hash = "0x6b9e8abff1a178c80f9c18a29a35436d48759a1bcada1f074b1821df0f87119"
+address = "0x194fb2b94cdf270b0e0b6cecc3886128a12f4a497cbd4963ff7aecbc0e7a6e7"
+class_hash = "0x6bde0a551ffa5621fc665c89d9d40e9280164d5e048b8ae1afb67595fffd7a0"
+original_class_hash = "0x6bde0a551ffa5621fc665c89d9d40e9280164d5e048b8ae1afb67595fffd7a0"
 base_class_hash = "0x22f3e55b61d86c2ac5239fa3b3b8761f26b9a5c0b5f61ddbd5d756ced498b46"
-abi = "manifests/dev/abis/deployments/contracts/dojo_starter_systems_actions_actions.json"
+abi = "manifests/dev/abis/deployments/contracts/kageki_duels_systems_player_actions_actions.json"
 reads = []
-writes = [
-    "Position",
-    "Moves",
-    "DirectionsAvailable",
-]
+writes = []
 computed = []
 init_calldata = []
-name = "dojo_starter::systems::actions::actions"
+name = "kageki_duels::systems::player_actions::actions"
+
+[[contracts]]
+kind = "DojoContract"
+address = "0x49e449a9e5f0d7aa2e4e26ec48928e6d9f75f75bc1020c803a45f67298a1cd5"
+class_hash = "0x776076fbdf15df6bcdefafffcbca4d16aa026addc59dc763dd27d341afc4607"
+original_class_hash = "0x776076fbdf15df6bcdefafffcbca4d16aa026addc59dc763dd27d341afc4607"
+base_class_hash = "0x22f3e55b61d86c2ac5239fa3b3b8761f26b9a5c0b5f61ddbd5d756ced498b46"
+abi = "manifests/dev/abis/deployments/contracts/kageki_duels_systems_stage_actions_actions.json"
+reads = []
+writes = []
+computed = []
+init_calldata = []
+name = "kageki_duels::systems::stage_actions::actions"
 
 [[models]]
 kind = "DojoModel"
-class_hash = "0x13fc796dd2d767ca4051ee20d673074f74b6e6b072bef1926ba429e427c8080"
-original_class_hash = "0x13fc796dd2d767ca4051ee20d673074f74b6e6b072bef1926ba429e427c8080"
-abi = "manifests/dev/abis/deployments/models/dojo_starter_models_moves_directions_available.json"
-name = "dojo_starter::models::moves::directions_available"
+class_hash = "0x5705fba54be668852ca5e559a1eee914808a22eabe141c2430c31e95e4965a2"
+original_class_hash = "0x5705fba54be668852ca5e559a1eee914808a22eabe141c2430c31e95e4965a2"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_models_card_card.json"
+name = "kageki_duels::models::card::card"
 
 [[models.members]]
-name = "player"
+name = "owner"
 type = "ContractAddress"
 key = true
 
 [[models.members]]
-name = "directions"
-type = "Array<Direction>"
+name = "cardId"
+type = "u128"
+key = true
+
+[[models.members]]
+name = "power"
+type = "u32"
 key = false
 
-[[models]]
-kind = "DojoModel"
-class_hash = "0x2f6c0529a3aa4c81c1679408106b2c00013fc19a7088ed9639046c0e3aeac7a"
-original_class_hash = "0x2f6c0529a3aa4c81c1679408106b2c00013fc19a7088ed9639046c0e3aeac7a"
-abi = "manifests/dev/abis/deployments/models/dojo_starter_models_moves_moves.json"
-name = "dojo_starter::models::moves::moves"
+[[models.members]]
+name = "health"
+type = "u32"
+key = false
 
 [[models.members]]
-name = "player"
-type = "ContractAddress"
-key = true
-
-[[models.members]]
-name = "remaining"
+name = "factor"
 type = "u8"
 key = false
 
 [[models.members]]
-name = "last_direction"
-type = "Direction"
+name = "experience"
+type = "u64"
 key = false
 
 [[models.members]]
-name = "can_move"
+name = "battles"
+type = "u64"
+key = false
+
+[[models.members]]
+name = "skill"
+type = "Skill"
+key = false
+
+[[models.members]]
+name = "element"
+type = "Element"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x7a8835203f7a624eddaf422a0330b0d270b4efac8ed4257bbbca2350ba3e871"
+original_class_hash = "0x7a8835203f7a624eddaf422a0330b0d270b4efac8ed4257bbbca2350ba3e871"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_models_card_card_count.json"
+name = "kageki_duels::models::card::card_count"
+
+[[models.members]]
+name = "owner"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "total"
+type = "u128"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x3b6cb97eedf9ec36774ff77281813ee5d10e72c253d7936b34eda196c10cced"
+original_class_hash = "0x3b6cb97eedf9ec36774ff77281813ee5d10e72c253d7936b34eda196c10cced"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_models_environment_randomness.json"
+name = "kageki_duels::models::environment::randomness"
+
+[[models.members]]
+name = "contract"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "last_random_id"
+type = "felt252"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x543b050b48140427f33b87e4cdb4b2a7f1a01b6f75a52de28781b5e418f90de"
+original_class_hash = "0x543b050b48140427f33b87e4cdb4b2a7f1a01b6f75a52de28781b5e418f90de"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_models_environment_stage.json"
+name = "kageki_duels::models::environment::stage"
+
+[[models.members]]
+name = "p1"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "p2"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "stageId"
+type = "u128"
+key = true
+
+[[models.members]]
+name = "p1_party"
+type = "u64"
+key = false
+
+[[models.members]]
+name = "p2_party"
+type = "u64"
+key = false
+
+[[models.members]]
+name = "is_finished"
 type = "bool"
 key = false
 
-[[models]]
-kind = "DojoModel"
-class_hash = "0x4312e0e9fa6d912c293311798591e5022744a5fbebefc5ddfcfcc9b7c0c9be1"
-original_class_hash = "0x4312e0e9fa6d912c293311798591e5022744a5fbebefc5ddfcfcc9b7c0c9be1"
-abi = "manifests/dev/abis/deployments/models/dojo_starter_models_position_position.json"
-name = "dojo_starter::models::position::position"
+[[models.members]]
+name = "randomness"
+type = "felt252"
+key = false
 
 [[models.members]]
-name = "player"
-type = "ContractAddress"
-key = true
-
-[[models.members]]
-name = "vec"
-type = "Vec2"
+name = "environment"
+type = "Element"
 key = false
 
 [[models]]
 kind = "DojoModel"
-class_hash = "0x1e1fa676a44c4b22fe024f3d3a681904fc4fcaececd382b94d794593b811de2"
-original_class_hash = "0x1e1fa676a44c4b22fe024f3d3a681904fc4fcaececd382b94d794593b811de2"
-abi = "manifests/dev/abis/deployments/models/dojo_starter_systems_actions_actions_moved.json"
-name = "dojo_starter::systems::actions::actions::moved"
+class_hash = "0x796641cbdaf7ac57a5b213e032f07305af3b2cd39d9a11ab1581f4d4a8cda61"
+original_class_hash = "0x796641cbdaf7ac57a5b213e032f07305af3b2cd39d9a11ab1581f4d4a8cda61"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_models_environment_stage_settings.json"
+name = "kageki_duels::models::environment::stage_settings"
+
+[[models.members]]
+name = "stage_setting"
+type = "u32"
+key = true
+
+[[models.members]]
+name = "stage_count"
+type = "u128"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x5d725e7c708cce96cddb4eff7065b82e8a8b427746c2dc95ba10be9fe968b27"
+original_class_hash = "0x5d725e7c708cce96cddb4eff7065b82e8a8b427746c2dc95ba10be9fe968b27"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_models_player_player.json"
+name = "kageki_duels::models::player::player"
 
 [[models.members]]
 name = "player"
@@ -110,6 +208,124 @@ type = "ContractAddress"
 key = true
 
 [[models.members]]
-name = "direction"
-type = "Direction"
+name = "battles"
+type = "u64"
+key = false
+
+[[models.members]]
+name = "wins"
+type = "u64"
+key = false
+
+[[models.members]]
+name = "loses"
+type = "u64"
+key = false
+
+[[models.members]]
+name = "party_count"
+type = "u64"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x512673e726733bfc448357d97879ba2c1ad877d36bb239ccb4a3c2e4799df7c"
+original_class_hash = "0x512673e726733bfc448357d97879ba2c1ad877d36bb239ccb4a3c2e4799df7c"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_models_player_player_party.json"
+name = "kageki_duels::models::player::player_party"
+
+[[models.members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "partyId"
+type = "u64"
+key = true
+
+[[models.members]]
+name = "is_active"
+type = "bool"
+key = false
+
+[[models.members]]
+name = "card1"
+type = "u128"
+key = false
+
+[[models.members]]
+name = "card2"
+type = "u128"
+key = false
+
+[[models.members]]
+name = "card3"
+type = "u128"
+key = false
+
+[[models.members]]
+name = "card4"
+type = "u128"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x186ad6855c0be7798f57853f5faab5cd621ecef58e67165f63453526c7eac9a"
+original_class_hash = "0x186ad6855c0be7798f57853f5faab5cd621ecef58e67165f63453526c7eac9a"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_systems_player_actions_actions_party_created.json"
+name = "kageki_duels::systems::player_actions::actions::party_created"
+
+[[models.members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "party"
+type = "PlayerParty"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x13b8a58a43d5259f5cfa06575eefe38cc1d30c6cf06e4f8bc3a6eef59793524"
+original_class_hash = "0x13b8a58a43d5259f5cfa06575eefe38cc1d30c6cf06e4f8bc3a6eef59793524"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_systems_player_actions_actions_player_card_created.json"
+name = "kageki_duels::systems::player_actions::actions::player_card_created"
+
+[[models.members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "cardId"
+type = "u128"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x4044c217f6c2ce69053167da4221724b51dbca8e89e473036b0480fea4fe257"
+original_class_hash = "0x4044c217f6c2ce69053167da4221724b51dbca8e89e473036b0480fea4fe257"
+abi = "manifests/dev/abis/deployments/models/kageki_duels_systems_stage_actions_actions_battle_result.json"
+name = "kageki_duels::systems::stage_actions::actions::battle_result"
+
+[[models.members]]
+name = "winner"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "loser"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "party_id1"
+type = "u64"
+key = false
+
+[[models.members]]
+name = "party_id2"
+type = "u64"
 key = false

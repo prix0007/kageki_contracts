@@ -1,0 +1,15 @@
+kind = "DojoModel"
+class_hash = "0x3b6cb97eedf9ec36774ff77281813ee5d10e72c253d7936b34eda196c10cced"
+original_class_hash = "0x3b6cb97eedf9ec36774ff77281813ee5d10e72c253d7936b34eda196c10cced"
+abi = "manifests/dev/abis/base/models/kageki_duels_models_environment_randomness.json"
+name = "kageki_duels::models::environment::randomness"
+
+[[members]]
+name = "contract"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "last_random_id"
+type = "felt252"
+key = false

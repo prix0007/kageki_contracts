@@ -1,0 +1,45 @@
+kind = "DojoModel"
+class_hash = "0x543b050b48140427f33b87e4cdb4b2a7f1a01b6f75a52de28781b5e418f90de"
+original_class_hash = "0x543b050b48140427f33b87e4cdb4b2a7f1a01b6f75a52de28781b5e418f90de"
+abi = "manifests/dev/abis/base/models/kageki_duels_models_environment_stage.json"
+name = "kageki_duels::models::environment::stage"
+
+[[members]]
+name = "p1"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "p2"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "stageId"
+type = "u128"
+key = true
+
+[[members]]
+name = "p1_party"
+type = "u64"
+key = false
+
+[[members]]
+name = "p2_party"
+type = "u64"
+key = false
+
+[[members]]
+name = "is_finished"
+type = "bool"
+key = false
+
+[[members]]
+name = "randomness"
+type = "felt252"
+key = false
+
+[[members]]
+name = "environment"
+type = "Element"
+key = false

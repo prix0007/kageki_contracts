@@ -1,0 +1,30 @@
+kind = "DojoModel"
+class_hash = "0x5d725e7c708cce96cddb4eff7065b82e8a8b427746c2dc95ba10be9fe968b27"
+original_class_hash = "0x5d725e7c708cce96cddb4eff7065b82e8a8b427746c2dc95ba10be9fe968b27"
+abi = "manifests/dev/abis/base/models/kageki_duels_models_player_player.json"
+name = "kageki_duels::models::player::player"
+
+[[members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "battles"
+type = "u64"
+key = false
+
+[[members]]
+name = "wins"
+type = "u64"
+key = false
+
+[[members]]
+name = "loses"
+type = "u64"
+key = false
+
+[[members]]
+name = "party_count"
+type = "u64"
+key = false

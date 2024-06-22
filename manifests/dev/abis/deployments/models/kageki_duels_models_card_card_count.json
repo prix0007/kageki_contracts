@@ -319,74 +319,26 @@
   },
   {
     "type": "impl",
-    "name": "movesImpl",
-    "interface_name": "dojo_starter::models::moves::Imoves"
-  },
-  {
-    "type": "enum",
-    "name": "dojo_starter::models::moves::Direction",
-    "variants": [
-      {
-        "name": "None",
-        "type": "()"
-      },
-      {
-        "name": "Left",
-        "type": "()"
-      },
-      {
-        "name": "Right",
-        "type": "()"
-      },
-      {
-        "name": "Up",
-        "type": "()"
-      },
-      {
-        "name": "Down",
-        "type": "()"
-      }
-    ]
-  },
-  {
-    "type": "enum",
-    "name": "core::bool",
-    "variants": [
-      {
-        "name": "False",
-        "type": "()"
-      },
-      {
-        "name": "True",
-        "type": "()"
-      }
-    ]
+    "name": "card_countImpl",
+    "interface_name": "kageki_duels::models::card::Icard_count"
   },
   {
     "type": "struct",
-    "name": "dojo_starter::models::moves::Moves",
+    "name": "kageki_duels::models::card::CardCount",
     "members": [
       {
-        "name": "player",
+        "name": "owner",
         "type": "core::starknet::contract_address::ContractAddress"
       },
       {
-        "name": "remaining",
-        "type": "core::integer::u8"
-      },
-      {
-        "name": "last_direction",
-        "type": "dojo_starter::models::moves::Direction"
-      },
-      {
-        "name": "can_move",
-        "type": "core::bool"
+        "name": "total",
+        "type": "core::integer::u128"
       }
     ]
   },
   {
     "type": "interface",
-    "name": "dojo_starter::models::moves::Imoves",
+    "name": "kageki_duels::models::card::Icard_count",
     "items": [
       {
         "type": "function",
@@ -394,7 +346,7 @@
         "inputs": [
           {
             "name": "model",
-            "type": "dojo_starter::models::moves::Moves"
+            "type": "kageki_duels::models::card::CardCount"
           }
         ],
         "outputs": [],
@@ -404,7 +356,7 @@
   },
   {
     "type": "event",
-    "name": "dojo_starter::models::moves::moves::Event",
+    "name": "kageki_duels::models::card::card_count::Event",
     "kind": "enum",
     "variants": []
   }

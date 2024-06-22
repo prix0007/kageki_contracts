@@ -1,0 +1,15 @@
+kind = "DojoModel"
+class_hash = "0x186ad6855c0be7798f57853f5faab5cd621ecef58e67165f63453526c7eac9a"
+original_class_hash = "0x186ad6855c0be7798f57853f5faab5cd621ecef58e67165f63453526c7eac9a"
+abi = "manifests/dev/abis/base/models/kageki_duels_systems_player_actions_actions_party_created.json"
+name = "kageki_duels::systems::player_actions::actions::party_created"
+
+[[members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "party"
+type = "PlayerParty"
+key = false

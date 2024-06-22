@@ -1,0 +1,15 @@
+kind = "DojoModel"
+class_hash = "0x796641cbdaf7ac57a5b213e032f07305af3b2cd39d9a11ab1581f4d4a8cda61"
+original_class_hash = "0x796641cbdaf7ac57a5b213e032f07305af3b2cd39d9a11ab1581f4d4a8cda61"
+abi = "manifests/dev/abis/base/models/kageki_duels_models_environment_stage_settings.json"
+name = "kageki_duels::models::environment::stage_settings"
+
+[[members]]
+name = "stage_setting"
+type = "u32"
+key = true
+
+[[members]]
+name = "stage_count"
+type = "u128"
+key = false
