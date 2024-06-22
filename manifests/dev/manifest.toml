@@ -4,8 +4,8 @@ class_hash = "0x3f63cecdc4964acafb921ba2934c6507d1b3c344edb64c2762cf08053169ab9"
 original_class_hash = "0x3f63cecdc4964acafb921ba2934c6507d1b3c344edb64c2762cf08053169ab9"
 abi = "manifests/dev/abis/deployments/dojo_world_world.json"
 address = "0x21fc8b30c72425f7dcdc97f39e8db73a27e131018ae3f031c3394101354ea8c"
-transaction_hash = "0x40264e8603174b1f1abad8c9476d45d8bb63c6703282a92cff794b1879a81da"
-block_number = 49
+transaction_hash = "0x78bb64aec52f5b13e924ea88a869bb329627446ea3af9faf9a93de5fa24bc57"
+block_number = 3
 seed = "kageki_duels"
 name = "dojo::world::world"
 
