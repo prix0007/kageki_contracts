@@ -1235,8 +1235,8 @@
     {
       "kind": "DojoContract",
       "address": "0x49e449a9e5f0d7aa2e4e26ec48928e6d9f75f75bc1020c803a45f67298a1cd5",
-      "class_hash": "0x776076fbdf15df6bcdefafffcbca4d16aa026addc59dc763dd27d341afc4607",
-      "original_class_hash": "0x776076fbdf15df6bcdefafffcbca4d16aa026addc59dc763dd27d341afc4607",
+      "class_hash": "0x1b4a2f07b20827e6639056f1ee22c3eb22f27fdaa30fe9ce9a27e924c46eee",
+      "original_class_hash": "0x1b4a2f07b20827e6639056f1ee22c3eb22f27fdaa30fe9ce9a27e924c46eee",
       "base_class_hash": "0x22f3e55b61d86c2ac5239fa3b3b8761f26b9a5c0b5f61ddbd5d756ced498b46",
       "abi": [
         {
@@ -1323,8 +1323,16 @@
               "name": "stage_creation_battle_maker",
               "inputs": [
                 {
+                  "name": "p1",
+                  "type": "core::starknet::contract_address::ContractAddress"
+                },
+                {
                   "name": "party_id1",
                   "type": "core::integer::u64"
+                },
+                {
+                  "name": "p2",
+                  "type": "core::starknet::contract_address::ContractAddress"
                 },
                 {
                   "name": "party_id2",

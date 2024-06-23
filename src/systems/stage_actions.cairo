@@ -9,7 +9,12 @@ use starknet::ContractAddress;
 trait IActions {
     fn battle_party(ref world: IWorldDispatcher, party_id1: u64, party_id2: u64);
     fn stage_creation_battle_maker(
-        ref world: IWorldDispatcher, party_id1: u64, party_id2: u64, raw_randomness: felt252
+        ref world: IWorldDispatcher,
+        p1: ContractAddress,
+        party_id1: u64,
+        p2: ContractAddress,
+        party_id2: u64,
+        raw_randomness: felt252
     );
 }
 
@@ -55,15 +60,20 @@ mod actions {
         }
 
         fn stage_creation_battle_maker(
-            ref world: IWorldDispatcher, party_id1: u64, party_id2: u64, raw_randomness: felt252
+            ref world: IWorldDispatcher,
+            p1: ContractAddress,
+            party_id1: u64,
+            p2: ContractAddress,
+            party_id2: u64,
+            raw_randomness: felt252
         ) {
             // Will lock this via stage params so only random contract can call. Keeping open for now
             let _caller = get_caller_address();
 
             // party 1 state
-            let mut party_1: PlayerParty = get!(world, party_id1, PlayerParty);
+            let mut party_1: PlayerParty = get!(world, (p1, party_id1), PlayerParty);
             // party 2 state
-            let mut party_2: PlayerParty = get!(world, party_id2, PlayerParty);
+            let mut party_2: PlayerParty = get!(world, (p2, party_id2), PlayerParty);
 
             assert(party_1.is_active, 'caller party not active');
             assert(party_2.is_active, 'opponent party not active');
@@ -77,15 +87,15 @@ mod actions {
             // Current Stage Element
             let mut stage_element: Element = stage_element_id.into();
 
-            let mut p1_c1: Card = get!(world, party_1.card1, Card);
-            let mut p1_c2: Card = get!(world, party_1.card2, Card);
-            let mut p1_c3: Card = get!(world, party_1.card3, Card);
-            let mut p1_c4: Card = get!(world, party_1.card4, Card);
+            let mut p1_c1: Card = get!(world, (p1, party_1.card1), Card);
+            let mut p1_c2: Card = get!(world, (p1, party_1.card2), Card);
+            let mut p1_c3: Card = get!(world, (p1, party_1.card3), Card);
+            let mut p1_c4: Card = get!(world, (p1, party_1.card4), Card);
 
-            let mut p2_c1: Card = get!(world, party_2.card1, Card);
-            let mut p2_c2: Card = get!(world, party_2.card2, Card);
-            let mut p2_c3: Card = get!(world, party_2.card3, Card);
-            let mut p2_c4: Card = get!(world, party_2.card4, Card);
+            let mut p2_c1: Card = get!(world, (p2, party_2.card1), Card);
+            let mut p2_c2: Card = get!(world, (p2, party_2.card2), Card);
+            let mut p2_c3: Card = get!(world, (p2, party_2.card3), Card);
+            let mut p2_c4: Card = get!(world, (p2, party_2.card4), Card);
 
             let mut current_p1: Card = p1_c1;
             let mut p1_idx: u8 = 0;
@@ -94,14 +104,13 @@ mod actions {
 
             while p1_idx < 4
                 && p2_idx < 4 {
-                    // increment card idx's
-                    p2_idx += 1;
-                    p1_idx += 1;
                     // Battle Cards 
                     let (winner_id, winner_health) = battle_cards(
                         current_p1, current_p2, stage_element
                     );
+                    // increment card idx's
                     if (winner_id == current_p1.cardId) {
+                        p2_idx += 1;
                         if (p2_idx == 0) {
                             current_p2 = p2_c1;
                         }
@@ -117,13 +126,14 @@ mod actions {
                         current_p1.health = winner_health;
                     }
                     if (winner_id == current_p2.cardId) {
+                        p1_idx += 1;
                         if (p1_idx == 0) {
                             current_p1 = p1_c1;
                         }
                         if (p1_idx == 1) {
-                            current_p1 = p1_c1;
+                            current_p1 = p1_c2;
                         }
-                        if (p1_idx == 1) {
+                        if (p1_idx == 2) {
                             current_p1 = p1_c3;
                         }
                         if (p1_idx == 3) {
@@ -158,12 +168,12 @@ mod actions {
 
             let mut winner_player = party_1.player;
             let mut loser_player = party_1.player;
-            if p1_idx >= 4 {
+
+            if p1_idx > 3 {
                 player2.wins += 1;
                 player1.loses += 1;
                 winner_player = party_2.player;
-            }
-            if p2_idx >= 4 {
+            } else {
                 player1.wins += 1;
                 player2.loses += 1;
                 loser_player = party_2.player;
@@ -212,7 +222,7 @@ mod actions {
                     winner: winner_player,
                     loser: loser_player,
                     party_id1: party_1.partyId,
-                    party_id2: party_1.partyId,
+                    party_id2: party_2.partyId,
                 })
             );
         }

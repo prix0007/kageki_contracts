@@ -83,8 +83,16 @@
         "name": "stage_creation_battle_maker",
         "inputs": [
           {
+            "name": "p1",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
             "name": "party_id1",
             "type": "core::integer::u64"
+          },
+          {
+            "name": "p2",
+            "type": "core::starknet::contract_address::ContractAddress"
           },
           {
             "name": "party_id2",
