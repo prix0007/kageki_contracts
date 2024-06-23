@@ -18,11 +18,17 @@ dojo = { git = "https://github.com/dojoengine/dojo", tag = "v0.7.1" }
 initializer_class_hash = "0xbeef"
 
 [tool.dojo.env]
-rpc_url = "http://localhost:5050/"
-# Default account for katana with seed = 0
+# rpc_url = "https://api.cartridge.gg/x/kageki/katana"
+rpc_url = "http://0.0.0.0:5050"
+
 account_address = "0xb3ff441a68610b30fd5e2abbf3a1548eb6ba6f3559f2862bf2dc757e5828ca"
 private_key = "0x2bbf4f9fd0bbb2e60b0316c1fe0b76cf7a4d0198bd493ced9b8df2a3a24d68a"
-#world_address = "0xb4079627ebab1cd3cf9fd075dda1ad2454a7a448bf659591f259efa2519b18"  # Uncomment and update this line with your world address.
+world_address = "0x21fc8b30c72425f7dcdc97f39e8db73a27e131018ae3f031c3394101354ea8c"  # Uncomment and update this line with your world address.
+
+# slot 
+# account_address = "0x2ea5a09a95ee73556a3ef6420c11a8df775fe4f06e58fd9f7a21b5d99e0b5ea"
+# private_key = "0x18055e629284db77daa8d60e4ca767d65807c3f1690785006e46d6e63a13d54"
+# world_address = "0x21fc8b30c72425f7dcdc97f39e8db73a27e131018ae3f031c3394101354ea8c"  # Uncomment and update this line with your world address.
 
 [tool.dojo.world]
 name = "Kageki Duels"
